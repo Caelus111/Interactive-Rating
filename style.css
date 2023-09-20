@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+  --primary-color: hsl(25, 97%, 53%);
+  --white-color: hsl(0, 0%, 100%);
+  --light-gray: hsl(217, 12%, 63%);
+  --medium-gray: hsla(216, 12%, 54%, 0.205);
+  --card-bg-color: hsl(213, 20%, 18%);
+  --background-color: hsl(216, 12%, 8%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Overpass', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: whitesmoke;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+button {
+  border: 0;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 1.24rem + 0.46vw, 1.7rem);
+  margin-block: 0.8rem;
+}
+
+p {
+  font-size: clamp(0.85rem, 0.74rem + 0.19vw, 0.96rem);
+  line-height: 1.5;
+  color: var(--light-gray);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: min(25.6rem, 80%);
+  margin: auto;
+  background: var(--card-bg-color);
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+.card.thank-you-state {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card.thank-you-state p:first-child {
+  width: fit-content;
+  padding: 0.3rem 1em;
+  border-radius: 50px;
+  background-color: var(--medium-gray);
+  color: var(--primary-color);
+  margin: 0.5rem auto 1.6rem auto;
+}
+
+.card img {
+  justify-self: start;
+  margin-block-end: 1.3rem;
+}
+
+.card .star {
+  background-color: var(--medium-gray);
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.ratings {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+  margin-block: 2rem;
+  text-align: center;
+}
+
+.ratings span {
+  padding: 1rem;
+  background-color:var(--medium-gray) ;
+  color: var(--light-gray);
+  border-radius: 50%;
+  transition: 350ms ease;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ratings span:hover {
+  background-color: var(--light-gray);
+  color: var(--white-color);
+}
+
+#btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-size: clamp(0.85rem, 0.74rem + 0.19vw, 0.96rem);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 350ms ease;
+}
+
+#btn:hover {
+  background: var(--white-color);
+  color: var(--primary-color);
+}
+
+.active {
+  color: var(--white-color) !important;
+  background-color: var(--primary-color) !important;
+}
+
+@media (width <= 500px) {
+  .ratings {
+    width: 18rem;
+    gap: 0.8rem;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .ratings span {
+    padding: 0.8rem;
+  }
+}
